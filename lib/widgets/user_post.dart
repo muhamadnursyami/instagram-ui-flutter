@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class UserPost extends StatelessWidget {
   const UserPost({
@@ -47,19 +48,37 @@ class UserPost extends StatelessWidget {
               'https://picsum.photos/600/300?random=$name',
               fit: BoxFit.cover,
             )),
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Icon(Icons.favorite_border),
-              SizedBox(
-                width: 10,
+              Row(
+                children: [
+                  SvgPicture.asset(
+                    'assets/icons/ic_favorite.svg',
+                    colorFilter:
+                        const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  SvgPicture.asset(
+                    'assets/icons/ic_comment.svg',
+                    colorFilter:
+                        const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  SvgPicture.asset(
+                    'assets/icons/ic_send.svg',
+                    colorFilter:
+                        const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                  ),
+                ],
               ),
-              Icon(Icons.chat_bubble_outline_outlined),
-              SizedBox(
-                width: 10,
-              ),
-              Icon(Icons.send_outlined)
+              const Icon(Icons.bookmark_border),
             ],
           ),
         ),

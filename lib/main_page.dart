@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ig_flutter_ui/pages/home_page.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -58,26 +59,46 @@ class _MainPageState extends State<MainPage> {
         onTap: _onTap,
         items: [
           BottomNavigationBarItem(
-              icon:
-                  Icon(_selectedIndex == 0 ? Icons.home : Icons.home_outlined),
+              icon: SvgPicture.asset(
+                'assets/icons/ic_home.svg',
+                colorFilter:
+                    const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+              ),
               label: "Home"),
           BottomNavigationBarItem(
-              icon: Icon(
-                  _selectedIndex == 1 ? Icons.search : Icons.search_outlined),
+              icon: SvgPicture.asset(
+                'assets/icons/ic_search.svg',
+                colorFilter:
+                    const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+              ),
               label: "Search"),
           BottomNavigationBarItem(
-              icon: Icon(_selectedIndex == 2
-                  ? Icons.video_call
-                  : Icons.video_call_outlined),
+              icon: SvgPicture.asset(
+                'assets/icons/ic_reels.svg',
+                colorFilter:
+                    const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+              ),
               label: "Reels"),
           BottomNavigationBarItem(
-              icon:
-                  Icon(_selectedIndex == 3 ? Icons.shop : Icons.shop_outlined),
+              icon: SvgPicture.asset(
+                'assets/icons/ic_shop.svg',
+                colorFilter:
+                    const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+              ),
               label: "Shop"),
-          BottomNavigationBarItem(
-              icon: Icon(_selectedIndex == 4
-                  ? Icons.person_2
-                  : Icons.person_2_outlined),
+          const BottomNavigationBarItem(
+              // icon: Icon(_selectedIndex == 4
+              //     ? Icons.person_2
+              //     : Icons.person_2_outlined),
+              icon: CircleAvatar(
+                radius: 13,
+                backgroundColor: Colors.white,
+                child: CircleAvatar(
+                  radius: 12,
+                  backgroundImage:
+                      NetworkImage('https://i.pravatar.cc/150?img=10'),
+                ),
+              ),
               label: "Account"),
         ],
       ),

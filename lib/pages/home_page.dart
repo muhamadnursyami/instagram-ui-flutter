@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ig_flutter_ui/widgets/bubble_story.dart';
 import 'package:ig_flutter_ui/widgets/user_post.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -11,26 +12,29 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text(
-            'Instagram',
-            style: TextStyle(fontWeight: FontWeight.bold),
+          title: SvgPicture.asset(
+            'assets/icons/ic_logo.svg',
+            colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
           ),
-          actions: const [
-            Icon(
-              Icons.add_box_outlined,
-              size: 30,
+          actions: [
+            SvgPicture.asset(
+              'assets/icons/ic_add.svg',
+              colorFilter:
+                  const ColorFilter.mode(Colors.white, BlendMode.srcIn),
             ),
             Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16),
-                child: Icon(
-                  Icons.favorite_border,
-                  size: 30,
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: SvgPicture.asset(
+                  'assets/icons/ic_favorite.svg',
+                  colorFilter:
+                      const ColorFilter.mode(Colors.white, BlendMode.srcIn),
                 )),
             Padding(
-              padding: EdgeInsets.only(right: 16),
-              child: Icon(
-                Icons.send_outlined,
-                size: 30,
+              padding: const EdgeInsets.only(right: 16),
+              child: SvgPicture.asset(
+                'assets/icons/ic_send.svg',
+                colorFilter:
+                    const ColorFilter.mode(Colors.white, BlendMode.srcIn),
               ),
             )
           ],
